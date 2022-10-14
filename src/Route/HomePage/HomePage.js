@@ -30,28 +30,29 @@ const HomePage = () => {
     },
   ];
 const images = ['http://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
-        'https: //jssors8.azureedge.net/demos/image-slider/img/px-beach-daylight-fun-1430675-image.jpg',
+        'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg',
         'https://jssors8.azureedge.net/demos/image-slider/img/px-fun-man-person-2361598-image.jpg'
       ]
-  const [counter,setCounter] = useState(0)
+  let [counter,setCounter] = useState(0)
   
   useEffect(()=>{
     const interval = setInterval(()=>{
-      if(counter >2){
-        setCounter(0);
-        return 
+      if(counter>=2){
+        console.log('h')
+        setCounter(0)
+      }else{
+        counter++
+        setCounter(counter)
       }
-      
-      setCounter((prev)=>prev+1)
-    
     },3000)
     
     return ()=>clearInterval(interval);
-  },[])
+  },[counter])
   return (
     <div>
       <Carosel>
-        <img src={images[counter]}/>
+        {console.log(counter)}
+        <ImageContainer style={{backgroundImage:`url(${images[counter]})`}}/>
       </Carosel>
 
       <Directory categories={categories}/>
@@ -63,5 +64,14 @@ export default HomePage
 
 const Carosel = styled.div`
 height:50vh;
-transition:all 1s ease-in-out;
+transition:box-shadow 800ms;
+margin:10px 10px;
 `
+
+const ImageContainer= styled.div`
+  height:100%;
+  width:100%;
+  border-radius:10px;
+  object-fit:cover;
+`
+
