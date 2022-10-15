@@ -3,12 +3,13 @@ import {Link, Outlet} from 'react-router-dom';
 import styled from 'styled-components';
 import {ReactComponent as Logo} from '../../asset/crwn.svg'
 import CartIcon from '../../Components/CartIcon/CartIcon';
-import {UserContext} from '../../context/userContext/userContext';
+
 import {signOutFn} from '../../utils/firebase'
 import DropDown from '../../Components/DropDown/DropDown';
+import {useSelector} from 'react-redux'
 
 const Nav = () => {
-  const {currentUser} = useContext(UserContext);
+  const currentUser = useSelector((state)=>state.user.currentUser)
   
   return (
     <>

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import CardItem from '../CardItem/CardItem';
 import styled from 'styled-components';
-import { ProductContext } from '../../context/ProductContext/ProductContext';
 import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux'
 
 const CategoryPreview = () => {
-  const {categories} = useContext(ProductContext);
+  const categories = useSelector((state)=>state.categories.categories)
+  console.log(categories)
   return (
     <div>
       {
