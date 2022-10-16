@@ -13,7 +13,7 @@ const CartIcon = () => {
     const handleClick=()=>{
       dispatch(createAction(!isOpen))
     }
-    
+    console.log(cartCount)
   return (
     <Container onClick={()=>handleClick}>
         <ShoppingIcon/>

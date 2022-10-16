@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {useDispatch,useSelector} from 'react-redux';
 import {cartItemSelector} from '../../store/cart/cartSelector'
+import {addToCart} from '../../store/cart/cartAction'
 const styles={
     media:{
         margin:10
@@ -20,7 +21,8 @@ export default function CardItem({item}) {
     const cartItems = useSelector(cartItemSelector)
 
     const addItem=(item)=>{
-      dispatch(cartItems,item)  
+      
+      dispatch(addToCart(cartItems,item))  
     }
 
   return (

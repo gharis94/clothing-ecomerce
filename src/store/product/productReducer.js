@@ -6,11 +6,6 @@ const INITIAL_STATE={
 
 
 
-
-
-
-
-
 export const productReducer=(state=INITIAL_STATE,action={})=>{
     const {type,payload} = action;
     console.log(type)

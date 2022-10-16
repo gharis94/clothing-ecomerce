@@ -12,10 +12,11 @@ export const cartIsOpenSelector=createSelector(
 )
 export const cartCountSelector=createSelector(
     [cartItemSelector],
-    (cartItem) =>cartItem.reduce((acc, cur) => {
-        acc += cur
+    (cartItem) =>{
+        return cartItem.reduce((acc, cur) => {
+        acc += cur.quantity
         return acc
-    }, 0)
+    }, 0)}
 )
 
 export const cartTotalSelector =createSelector(
