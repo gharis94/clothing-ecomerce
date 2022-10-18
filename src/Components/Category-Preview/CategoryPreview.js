@@ -6,7 +6,6 @@ import {useSelector} from 'react-redux'
 
 const CategoryPreview = () => {
   const categories = useSelector((state)=>state.categories.categories)
-  console.log(categories)
   return (
     <div>
       {
