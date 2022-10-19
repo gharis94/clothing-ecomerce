@@ -6,11 +6,14 @@ import Shop from './Route/Shop/Shop'
 import Auth from './Route/Auth/Auth'
 import CheckOut from './Route/CheckOut/CheckOut';
 import React,{useEffect} from 'react';
-import {onAuthStateChangedListner} from './utils/firebase'
+import {onAuthStateChangedListner,signOutFn} from './utils/firebase'
 import {setCurrentUser} from './store/user/userAction'
 import {useDispatch} from 'react-redux'
+
+
 function App() {
   const dispatch = useDispatch();
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListner((user) => {
       dispatch(setCurrentUser(user))
