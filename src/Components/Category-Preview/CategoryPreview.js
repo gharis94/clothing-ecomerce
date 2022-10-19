@@ -3,10 +3,10 @@ import CardItem from '../CardItem/CardItem';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux'
-import {categoriesSelectorItems} from '../../store/product/productSelector'
+import {categoriesMapSelector} from '../../store/product/productSelector'
 
 const CategoryPreview = () => {
-  const categories = useSelector(categoriesSelectorItems)
+  const categories = useSelector(categoriesMapSelector)
   return (
     <div>
       {

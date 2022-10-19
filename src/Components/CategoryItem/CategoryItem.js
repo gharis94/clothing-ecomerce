@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom'
 import CardItem from '../CardItem/CardItem';
 import styled from 'styled-components';
 import {useSelector} from 'react-redux'
-import {categoriesSelectorItems} from '../../store/product/productSelector'
+import {categoriesMapSelector} from '../../store/product/productSelector'
 
 const CategoryItem = () => {
     const {category} = useParams();
-    const categories = useSelector(categoriesSelectorItems)  
+    const categories = useSelector(categoriesMapSelector)  
   return (
     <>
         <Heading>{category.toUpperCase()}</Heading>

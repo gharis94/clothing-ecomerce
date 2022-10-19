@@ -17,7 +17,7 @@ export const fetchCategoriesError=(error)=>{
 export const fetchCategoriesAsync = () => async (dispatch) => {
    dispatch(fetchCategoriesStart())
    try{
-      const rsp = await getCategoriesAndDocuments()
+      const rsp = await getCategoriesAndDocuments('categories')
       dispatch(fetchCategoriesSuccess(rsp))
    }catch(error){
       dispatch(fetchCategoriesError(error))

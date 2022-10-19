@@ -1,7 +1,7 @@
 import {SET_PRODUCT} from './productType'
 
 const INITIAL_STATE={
-    categories:{},
+    categories:[],
     isLoading:false,
     Error:null
 };
@@ -10,7 +10,7 @@ const INITIAL_STATE={
 
 export const productReducer=(state=INITIAL_STATE,action={})=>{
     const {type,payload} = action;
-    console.log(type)
+    console.log(payload)
     switch(type){
         case SET_PRODUCT.SET_CATEGORIES_START:
             return{
