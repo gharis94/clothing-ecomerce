@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import CheckOutItem from '../../Components/CheckOutItem/CheckOutItem'
-import { CartContext } from '../../context/CartContext/CartContext'
+import {useSelector} from 'react-redux';
+import {cartItemSelector} from '../../store/cart/cartSelector'
 
 const CheckOut = () => {
-    const {cartItems} = useContext(CartContext)
-    console.log(cartItems)
+    const cartItems = useSelector(cartItemSelector)
+    
   return (
     <Container>
         <HeaderContainer>

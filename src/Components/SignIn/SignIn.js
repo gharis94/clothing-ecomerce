@@ -20,9 +20,11 @@ const SignIn = () => {
  };
 
  const googleButton =async()=>{
+    console.log('click')
     try{
         const {user} = await signInWithGoogle();
         await createUserDocFromAuth(user);
+        console.log(user)
     }catch(error){
         console.log('Error in logging',error)
     }
@@ -43,23 +45,25 @@ const SignIn = () => {
  return (
     <Container>
         <h4>Already have account</h4>
-        <form onSubmit={(e)=>handleSubmit(e)}>
-            <Box component = 'form'
-            sx = {{'& > :not(style)': {
+        
+            <Box onSubmit = {(e) => handleSubmit(e)} component='form'
+            autoComplete='off'
+            noValidate
+                sx = {{'& > :not(style)': {
                         m: 1,
                         width: '35ch'
-                    },}} noValidate autoComplete = "off" >
+                    },}}>
 
                 <TextField id='outlined-basic' label='Email' variant="outlined" type='email' name='email' value={email} onChange={(e)=>handleChange(e)}/>
                 
                 <TextField id='outlined-basic' label='Password' variant="outlined"  type='password' name='password' value={password} onChange={(e)=>handleChange(e)}/>
-            </Box>
+            
             
             <Button>
                 <BasicButton value='Sign In' variant='outlined' type='submit'/>
-                <BasicButton variant='contained' value='Google Sign In' onClick={()=>googleButton()} type='button'/>
+                <BasicButton variant='contained' value='Google Sign In' click={()=>googleButton()} type='button'/>
             </Button>
-        </form>
+        </Box>
         
     </Container>
   )

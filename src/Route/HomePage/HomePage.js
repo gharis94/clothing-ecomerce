@@ -37,35 +37,41 @@ const images = ['http://wowslider.com/sliders/demo-18/data1/images/hongkong10817
   
   useEffect(()=>{
     const interval = setInterval(()=>{
-      if(counter>=2){
-        console.log('h')
-        setCounter(0)
+      if(counter === 2){
+        setCounter(0);
       }else{
-        counter++
-        setCounter(counter)
+        setCounter(counter+1)
       }
+        
     },3000)
     
     return ()=>clearInterval(interval);
   },[counter])
   return (
-    <div>
+    <Main>
       <Carosel>
-        {console.log(counter)}
         <ImageContainer style={{backgroundImage:`url(${images[counter]})`}}/>
       </Carosel>
 
       <Directory categories={categories}/>
-    </div>
+    </Main>
   )
 }
 
 export default HomePage
+const Main=styled.div`
+  padding:10px;
+`
 
 const Carosel = styled.div`
 height:50vh;
-transition:box-shadow 800ms;
-margin:10px 10px;
+transition:all 1s ease-in-out;
+padding:10px 10px;
+`
+const ImageContainer = styled.div`
+  height:90%;
+  width:100%;
+  border-radius:10px;
 `
 
 const ImageContainer= styled.div`

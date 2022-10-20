@@ -1,12 +1,13 @@
 import React,{useContext} from 'react'
 import { useParams } from 'react-router-dom'
-import { ProductContext } from '../../context/ProductContext/ProductContext';
 import CardItem from '../CardItem/CardItem';
 import styled from 'styled-components';
+import {useSelector} from 'react-redux'
+import {categoriesMapSelector} from '../../store/product/productSelector'
 
 const CategoryItem = () => {
     const {category} = useParams();
-    const {categories} = useContext(ProductContext) 
+    const categories = useSelector(categoriesMapSelector)  
   return (
     <>
         <Heading>{category.toUpperCase()}</Heading>

@@ -5,8 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { CartContext } from '../../context/CartContext/CartContext';
-
+import {useDispatch,useSelector} from 'react-redux';
+import {cartItemSelector} from '../../store/cart/cartSelector'
+import {addToCart} from '../../store/cart/cartAction'
 const styles={
     media:{
         margin:10
@@ -16,7 +17,14 @@ const styles={
 
 export default function CardItem({item}) {
     const {name,price,imageUrl} = item;
-    const {addItem} = React.useContext(CartContext);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(cartItemSelector)
+
+    const addItem=(item)=>{
+      
+      dispatch(addToCart(cartItems,item))  
+    }
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia

@@ -4,11 +4,23 @@ import BasicButton from '../BasicButton/BasicButton';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import { CartContext } from '../../context/CartContext/CartContext';
+import {useDispatch,useSelector} from 'react-redux';
+import {addToCart,decFrom,removeItemFrom} from '../../store/cart/cartAction'
+import {cartItemSelector} from '../../store/cart/cartSelector'
 
 const CheckOutItem = ({item}) => {
     const {name,imageUrl,price,quantity} = item;
-    const {decrement,addItem,delFromCart} = useContext(CartContext)
+    const cartItems = useSelector(cartItemSelector)
+    const dispatch = useDispatch();
+    const decrement=(item)=>{
+      dispatch(decFrom(cartItems,item))
+    }
+    const addItem=(item)=>{
+      dispatch(addToCart(cartItems,item))
+    }
+    const delFromCart=(item)=>{
+      dispatch(removeItemFrom(cartItems,item))
+    }
   return (
     <Container>
         <Image >
