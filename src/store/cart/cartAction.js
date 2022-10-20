@@ -1,6 +1,5 @@
 import { createAction } from "../../utils/createAction"
 import {SET_CART_TYPES} from './cartType'
-import {useDispatch} from 'react-redux'
 
 export const setCartIsOpen=(data) =>{
     return createAction(SET_CART_TYPES.IS_OPEN,(data))

@@ -29,9 +29,9 @@ const HomePage = () => {
       imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
     },
   ];
-const images = ['http://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
-        'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg',
-        'https://jssors8.azureedge.net/demos/image-slider/img/px-fun-man-person-2361598-image.jpg'
+const images = ['https://static.vecteezy.com/system/resources/previews/004/299/835/original/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg',
+        'https://previews.123rf.com/images/pyotrme/pyotrme1807/pyotrme180700002/104942206-banner-template-of-online-shopping-and-e-commerce-modern-flat-design-concept-of-web-page-design-for-.jpg',
+        'https://images.all-free-download.com/images/graphiclarge/ecommerce_website_banner_template_presents_buyer_leaves_decor_6920123.jpg'
       ]
   let [counter,setCounter] = useState(0)
   
