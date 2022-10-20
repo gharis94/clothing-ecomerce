@@ -68,11 +68,6 @@ height:50vh;
 transition:all 1s ease-in-out;
 padding:10px 10px;
 `
-const ImageContainer = styled.div`
-  height:90%;
-  width:100%;
-  border-radius:10px;
-`
 
 const ImageContainer= styled.div`
   height:100%;
